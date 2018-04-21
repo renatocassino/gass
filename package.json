@@ -12,7 +12,9 @@
     "glob": "^7.1.2",
     "scss-tokenizer": "^0.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^22.4.3"
+  },
   "scripts": {
     "test": "jest"
   },
@@ -21,7 +23,7 @@
     "url": "git+https://github.com/tacnoman/gass.git"
   },
   "keywords": [
-    "grass",
+    "gass",
     "grep",
     "sass",
     "scss",
@@ -30,7 +32,7 @@
   "author": "Tacnoman <renatocassino@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tacnoman/grass/issues"
+    "url": "https://github.com/tacnoman/gass/issues"
   },
-  "homepage": "https://github.com/tacnoman/grass#readme"
+  "homepage": "https://github.com/tacnoman/gass#readme"
 }
