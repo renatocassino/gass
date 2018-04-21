@@ -1,8 +1,14 @@
 .product {
+  &__description {
+    color: #F00;
+  }
+
   &__title {
     &--active {
       color: #33dd33;
     }
+
+    background: #f00;
   }
 }
 
