@@ -12,3 +12,5 @@ node_js:
   - "6.12.3"
 script:
   - npm run test
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
