@@ -13,4 +13,8 @@ const printResult = async function({ file, line }) {
   console.log(content.join('\n'))
 }
 
-module.exports = printResult
+const printResults = (results) => {
+  results.forEach(printResult)
+}
+
+module.exports = printResults
