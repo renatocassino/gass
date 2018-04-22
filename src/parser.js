@@ -2,9 +2,21 @@ const getQueryFromArray = require('./getQueryFromArray')
 const printResult = require('./printer')
 
 const interpreter = {}
+interpreter['word'] = function({ token, lastTokens }) {
+  lastTokens.push(token)
 
-interpreter['{'] = function({ lastToken, fifo, classToSearch, file }) {
-  fifo.push(lastToken.value)
+  return {
+    lastTokens: lastTokens
+  }
+}
+
+interpreter['ident'] = interpreter['word']
+
+interpreter['{'] = function({ lastTokens, fifo, classToSearch, file }) {
+  const lastTokenValue = lastTokens.map((t) => t.value).join(' ')
+  const lastToken = lastTokens[lastTokens.length-1]
+
+  fifo.push(lastTokenValue)
 
   if(getQueryFromArray(fifo) === classToSearch) {
     printResult({
@@ -14,14 +26,16 @@ interpreter['{'] = function({ lastToken, fifo, classToSearch, file }) {
   }
 
   return {
-    fifo
+    fifo,
+    lastTokens: []
   }
 }
 
 interpreter['}'] = function({ fifo }) {
   fifo.pop()
   return {
-    fifo
+    fifo,
+    lastTokens: []
   }
 }
 
@@ -30,7 +44,7 @@ const parser = (tokens, classToSearch, file) => {
 
   let state = {
     fifo: [],
-    lastToken: null
+    lastTokens: []
   }
 
   tokens.forEach(function(tokenArray) {
@@ -40,15 +54,16 @@ const parser = (tokens, classToSearch, file) => {
       line: tokenArray[2]
     }
 
-    const { fifo, lastToken } = state
+    const { fifo, lastTokens } = state
 
     if(typeof interpreter[token.type] !== 'undefined') {
       state = Object.assign({}, state, interpreter[token.type]({
-        file, fifo, lastToken, classToSearch
+        file, fifo, lastTokens, classToSearch, token
       }))
+      return
     }
 
-    state.lastToken = token
+    state.lastTokens = []
   })
 }
 
