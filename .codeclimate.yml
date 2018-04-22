@@ -1,0 +1,12 @@
+engines:
+  eslint:
+    enabled: true
+    config:
+      config: ./.eslintrc.js
+      extensions:
+        - .js
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - javascript:
