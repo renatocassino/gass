@@ -1,4 +1,4 @@
-# Grass (GRep sASS)
+# Gass (Grep sASS)
 
 Tool to get file and line using the css rule. When debugging css is difficult to get the css query and find in scss file.
 With this tool you will find easy.
@@ -6,7 +6,7 @@ With this tool you will find easy.
 ## Installation
 
 ```bash
-$ npm i -g grass
+$ npm i -g gass
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ Create a scss file in a folder (ex: product.scss).
 Now run:
 
 ```bash
-$ grass .product__title--active
+$ gass .product__title--active
 ```
 
 You will see:
@@ -37,7 +37,7 @@ You will see:
 Searching in: **/*.scss
 
 path/to/product.scss
-6:    &--active {
+5:    &--active {
 ```
 
 ## Change searcher
@@ -45,5 +45,5 @@ path/to/product.scss
 The default search is a glob `**/*.scss`, but is possible to search with another glob using the code:
 
 ```bash
-$ grass .product__title--active -f stylesheets/**.scss
+$ gass .product__title--active -f stylesheets/**.scss
 ```
