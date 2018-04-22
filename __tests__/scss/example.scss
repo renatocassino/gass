@@ -1,6 +1,11 @@
 .product {
   &__description {
     color: #F00;
+    border: 1px solid #ccc;
+  }
+
+  div {
+    height: 20px;
   }
 
   &__title {
