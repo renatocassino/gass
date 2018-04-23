@@ -17,4 +17,7 @@ const printResults = (results) => {
   results.forEach(printResult)
 }
 
-module.exports = printResults
+module.exports = {
+  printResults: printResults,
+  printResult: printResult
+}

@@ -21,4 +21,13 @@ describe('#interpreter', () => {
       lastTokens: [lastToken, token]
     })
   })
+
+  it('should ident is the same method of word', () => {
+    expect(interpreter['word'] === interpreter['ident']).toBe(true)
+  })
+
+  it('should remove the list when close the braces', () => {
+    const state = interpreter['}']({ fifo: [1,2,3] })
+    expect(state).toEqual({ fifo: [1,2], lastTokens: [] })
+  })
 })

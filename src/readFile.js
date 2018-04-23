@@ -1,7 +1,7 @@
 const fs = require('fs')
 const ScssTokenizer = require('scss-tokenizer')
 const parser = require('./parser')
-const printResults = require('./printer')
+const printResults = require('./printer').printResults
 
 const classToSearch = process.argv[2]
 
