@@ -30,4 +30,32 @@ describe('#interpreter', () => {
     const state = interpreter['}']({ fifo: [1,2,3] })
     expect(state).toEqual({ fifo: [1,2], lastTokens: [] })
   })
+
+  it('should append token when open braces', () => {
+    token = tokenArrayToToken(['word', '.class', 1])
+    const state = interpreter['{']({
+      lastTokens: [token],
+      fifo: [],
+      classToSearch: '.not-found',
+      results: []
+    })
+
+    expect(state.fifo).toEqual(['.class'])
+  })
+
+  it('should bring result when find class', () => {
+    token = tokenArrayToToken(['word', '.class', 1])
+    const state = interpreter['{']({
+      lastTokens: [token],
+      fifo: [],
+      classToSearch: '.class',
+      file: '/path/to/file.scss',
+      results: []
+    })
+
+    expect(state.results).toEqual([{
+      file: '/path/to/file.scss',
+      line: 1
+    }])
+  })
 })

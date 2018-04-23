@@ -1,7 +1,7 @@
 const colors = require('colors')
 const fs = require('fs')
 
-const printResult = async function({ file, line }) {
+const printResult = async ({ file, line }) => {
   const fileLine = fs.readFileSync(file).toString().split('\n')[line-1]
 
   const content = [
