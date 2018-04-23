@@ -1,4 +1,5 @@
 const interpreter = require('./interpreter')
+const tokenArrayToToken = require('./tokenArrayToToken')
 
 const parser = (tokens, classToSearch, file) => {
   tokens = tokens.filter((token) => token[0] != 'space' && token[0] != 'newline')
@@ -10,12 +11,7 @@ const parser = (tokens, classToSearch, file) => {
   }
 
   for(let i = 0; i < tokens.length; i++) {
-    const token = {
-      type: tokens[i][0],
-      value: tokens[i][1],
-      line: tokens[i][2]
-    }
-
+    const token = tokenArrayToToken(tokens[i])
     const { fifo, lastTokens, results } = state
 
     if(typeof interpreter[token.type] !== 'undefined') {
