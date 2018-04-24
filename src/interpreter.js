@@ -12,6 +12,10 @@ interpreter['word'] = function({ token, lastTokens }) {
 interpreter['ident'] = interpreter['word']
 
 interpreter['{'] = function({ lastTokens, fifo, classToSearch, file, results }) {
+  if(lastTokens.length === 0) {
+    return {}
+  }
+
   const lastTokenValue = lastTokens.map((t) => t.value).join(' ')
   const lastToken = lastTokens[lastTokens.length-1]
 
