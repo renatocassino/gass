@@ -1,7 +1,7 @@
 let program = require('commander')
 
 program
-  .version('0.1.0')
+  .version('0.1.1')
   .option('-f, --files [glob]', 'Glob of scss files')
 
 program.parse(process.argv)
