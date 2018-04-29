@@ -10,7 +10,7 @@
     "colors": "^1.2.1",
     "commander": "^2.15.1",
     "glob": "^7.1.2",
-    "scss-tokenizer": "^0.3.0"
+    "tacnoman-scss-tokenizer": "0.3.1"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

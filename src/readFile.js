@@ -1,5 +1,5 @@
 const fs = require('fs')
-const ScssTokenizer = require('scss-tokenizer')
+const ScssTokenizer = require('tacnoman-scss-tokenizer')
 const parser = require('./parser')
 const printResults = require('./printer').printResults
 
