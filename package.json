@@ -3,7 +3,7 @@
   "bin": {
     "gass": "./index.js"
   },
-  "version": "1.2.0",
+  "version": "0.0.0-development",
   "description": "Tool to get file and line using the css rule. When debugging css is difficult to get the css query and find in scss file. With this tool you will find easy.",
   "main": "index.js",
   "dependencies": {
@@ -13,15 +13,21 @@
     "tacnoman-scss-tokenizer": "0.3.1"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "commitizen": "^4.2.2",
     "eslint": "^4.19.1",
-    "jest": "^22.4.3"
+    "jest": "^22.4.3",
+    "semantic-release": "^17.2.2"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "commit": "npm run git-cz",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tacnoman/gass.git"
+    "url": "https://github.com/tacnoman/gass.git"
   },
   "keywords": [
     "gass",
