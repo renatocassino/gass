@@ -18,6 +18,6 @@ const printResults = (results) => {
 }
 
 module.exports = {
-  printResults: printResults,
-  printResult: printResult
+  printResults,
+  printResult,
 }

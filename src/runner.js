@@ -17,7 +17,13 @@ const run = function() {
       process.exit()
     }
 
-    files.forEach(readFile)
+    const proms = files.map(readFile)
+
+    Promise.all(proms).then(results => {
+      if (results.flat().length === 0) {
+        console.log(`Not found any result with this query`)
+      }
+    })
   })
 }
 
