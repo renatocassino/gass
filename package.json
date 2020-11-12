@@ -3,7 +3,7 @@
   "bin": {
     "gass": "./index.js"
   },
-  "version": "1.2.0",
+  "version": "1.0.0",
   "description": "Tool to get file and line using the css rule. When debugging css is difficult to get the css query and find in scss file. With this tool you will find easy.",
   "main": "index.js",
   "dependencies": {
