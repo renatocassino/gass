@@ -21,7 +21,7 @@ const run = function() {
 
     Promise.all(proms).then(results => {
       if (results.flat().length === 0) {
-        console.log(`Not found any result with this query`)
+        console.log(`Not found any result with this query :/`)
       }
     })
   })
