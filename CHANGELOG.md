@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/tacnoman/gass/compare/1.3.0...1.4.0) (2020-11-14)
+
+
+### Features
+
+* **dependencies:** Update all dependencies ([dabdc8d](https://github.com/tacnoman/gass/commit/dabdc8df608e908eb5d21b51323f502add151fcb))
+* **feedback:** Add message errors ([8fa9004](https://github.com/tacnoman/gass/commit/8fa90048519b57113f8fc902a4bb8258d975ad6a))
+
 # 1.0.0 (2020-11-12)
 
 
